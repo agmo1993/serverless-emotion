@@ -1,1 +1,6 @@
 Pillow
+keras
+opencv
+numpy
+
+
