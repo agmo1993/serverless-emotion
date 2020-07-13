@@ -1,1 +1,7 @@
 Pillow
+tensorflow
+keras
+opencv-python
+numpy
+
+

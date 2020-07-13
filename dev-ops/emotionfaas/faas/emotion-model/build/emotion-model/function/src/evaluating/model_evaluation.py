@@ -12,7 +12,7 @@ def evaluate_sample_model(image_path):
     :param path: an absolute path to the test video
     :type path: String
     """
-    folder = '/home/ubuntu/serverless-emotion/cv/model/sample_model.hdf5'
+    folder = '/Users/haiho/PycharmProjects/Serverless-emotion/serverless-emotion/cv/model/sample_model.hdf5'
     classifier = load_model(folder)
     classes = {0: 'Angry', 1: 'Disgust', 2: 'Fearful', 3: 'Happy', 4: 'Neutral', 5: 'Sad', 6: 'Surprised'}
 
@@ -53,8 +53,8 @@ def evaluate_model_smile(image_path):
     :param path: an absolute path to the test video
     :type path: String
     """
-    faceCascade = cv2.CascadeClassifier('/home/ubuntu/serverless-emotion/cv/model/haarcascade_frontalface_alt.xml')
-    #smileCascade= cv2.CascadeClassifier('/Users/haiho/PycharmProjects/Serverless-emotion/serverless-emotion/cv/model/haarcascade_smile.xml')
+    faceCascade = cv2.CascadeClassifier('/Users/haiho/PycharmProjects/Serverless-emotion/serverless-emotion/cv/model/haarcascade_frontalface_alt.xml')
+    smileCascade= cv2.CascadeClassifier('/Users/haiho/PycharmProjects/Serverless-emotion/serverless-emotion/cv/model/haarcascade_smile.xml')
 
     # grab the image
     req = urlopen(image_path)

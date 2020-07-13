@@ -2,9 +2,8 @@ import numpy as np
 from urllib.request import urlopen
 import cv2
 from PIL import Image
-from processing import data_processing
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import img_to_array
+from keras.models import load_model
+from keras.preprocessing.image import img_to_array
 
 
 def handle(req):
@@ -15,9 +14,9 @@ def handle(req):
     url = req
     image = Image.open(urlopen(url))
     width, height = image.size
-    
+    labels, prediction = evaluate_sample_model(url)
 
-    return (width,height)
+    return (labels, prediction)
 
 def evaluate_sample_model(image_path):
     """Evaluates a test video from path using following models:
@@ -26,7 +25,7 @@ def evaluate_sample_model(image_path):
     :param path: an absolute path to the test video
     :type path: String
     """
-    folder = './model/sample_model.hdf5'
+    folder = '/home/app/function/sample_model.hdf5'
     classifier = load_model(folder)
     classes = {0: 'Angry', 1: 'Disgust', 2: 'Fearful', 3: 'Happy', 4: 'Neutral', 5: 'Sad', 6: 'Surprised'}
 
@@ -56,7 +55,7 @@ def evaluate_sample_model(image_path):
     label = classes[preds.argmax()]
     print('label: {} | prediction: {}'.format(label, preds))
 
-    return label, preds.argmax()
+    return label, preds[preds.argmax()]
 
 def face_det_crop_resize(img_gray):
     """Returns a resized cropped (350, 350) grayscale image.
@@ -66,7 +65,7 @@ def face_det_crop_resize(img_gray):
     :return: a cropped (350, 350) grayscale image
     :rtype: cv2 image
     """
-    faceCascade = cv2.CascadeClassifier('./model/haarcascade_frontalface_alt.xml')
+    faceCascade = cv2.CascadeClassifier('/home/app/function/haarcascade_frontalface_alt.xml')
     faces = faceCascade.detectMultiScale(img_gray, 1.3, 5)
     rects = []
     for (x,y,w,h) in faces:
