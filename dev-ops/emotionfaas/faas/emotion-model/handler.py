@@ -26,7 +26,7 @@ def evaluate_sample_model(image_path):
     :param path: an absolute path to the test video
     :type path: String
     """
-    folder = '/Users/haiho/PycharmProjects/Serverless-emotion/serverless-emotion/cv/model/sample_model.hdf5'
+    folder = './model/sample_model.hdf5'
     classifier = load_model(folder)
     classes = {0: 'Angry', 1: 'Disgust', 2: 'Fearful', 3: 'Happy', 4: 'Neutral', 5: 'Sad', 6: 'Surprised'}
 
@@ -66,7 +66,7 @@ def face_det_crop_resize(img_gray):
     :return: a cropped (350, 350) grayscale image
     :rtype: cv2 image
     """
-    faceCascade = cv2.CascadeClassifier('/Users/haiho/PycharmProjects/Serverless-emotion/serverless-emotion/cv/model/haarcascade_frontalface_alt.xml')
+    faceCascade = cv2.CascadeClassifier('./model/haarcascade_frontalface_alt.xml')
     faces = faceCascade.detectMultiScale(img_gray, 1.3, 5)
     rects = []
     for (x,y,w,h) in faces:
