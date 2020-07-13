@@ -1,6 +1,6 @@
 Pillow
 tensorflow
-opencv
+opencv-python
 numpy
 
 
