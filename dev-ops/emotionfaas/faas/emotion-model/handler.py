@@ -4,7 +4,7 @@ import cv2
 from PIL import Image
 from keras.models import load_model
 from keras.preprocessing.image import img_to_array
-
+import json
 
 def handle(req):
     """handle a request to the function
@@ -16,7 +16,7 @@ def handle(req):
     width, height = image.size
     labels, prediction = evaluate_sample_model(url)
 
-    return (labels, prediction)
+    return json.dumps({"prediction": labels, "Confidence level" : str(round(prediction,2))})
 
 def evaluate_sample_model(image_path):
     """Evaluates a test video from path using following models:

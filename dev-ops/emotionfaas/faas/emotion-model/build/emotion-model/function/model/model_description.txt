@@ -1,8 +1,0 @@
-sample_model:
-|-7 emotions: angry, disgust, fearful, happy, neutral, sad, surprise.
-
-haarcascade_frontalface_alt.xml:
-|-detect frontal face
-
-haarcascade_smile.xml:
-|-detect smile on face
