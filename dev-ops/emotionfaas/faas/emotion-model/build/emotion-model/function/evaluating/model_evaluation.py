@@ -4,6 +4,19 @@ from urllib.request import urlopen
 from processing import data_processing
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array
+import os
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+'''
+      Level | Level for Humans | Level Description                  
+ -------|------------------|------------------------------------ 
+  0     | DEBUG            | [Default] Print all messages       
+  1     | INFO             | Filter out INFO messages           
+  2     | WARNING          | Filter out INFO & WARNING messages 
+  3     | ERROR            | Filter out all messages 
+'''
+
+
 
 def evaluate_sample_model(image_path):
     """Evaluates a test video from path using following models:
