@@ -25,7 +25,7 @@ def evaluate_sample_model(image_path):
     :param path: an absolute path to the test video
     :type path: String
     """
-    folder = '/Users/haiho/PycharmProjects/Serverless-emotion/serverless-emotion/cv/model/sample_model.hdf5'
+    folder = '/home/app/function/sample_model.hdf5'
     classifier = load_model(folder)
     classes = {0: 'Angry', 1: 'Disgust', 2: 'Fearful', 3: 'Happy', 4: 'Neutral', 5: 'Sad', 6: 'Surprised'}
 
@@ -38,7 +38,7 @@ def evaluate_sample_model(image_path):
     if image is None:
         return "no image found"
 
-    rects, roi = data_processing.face_det_crop_resize(image)
+    rects, roi = face_det_crop_resize(image)
 
     roi = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
     roi = roi.astype("float") / 255.0
@@ -66,8 +66,8 @@ def evaluate_model_smile(image_path):
     :param path: an absolute path to the test video
     :type path: String
     """
-    faceCascade = cv2.CascadeClassifier('/Users/haiho/PycharmProjects/Serverless-emotion/serverless-emotion/cv/model/haarcascade_frontalface_alt.xml')
-    smileCascade= cv2.CascadeClassifier('/Users/haiho/PycharmProjects/Serverless-emotion/serverless-emotion/cv/model/haarcascade_smile.xml')
+    faceCascade = cv2.CascadeClassifier('/home/app/function/haarcascade_frontalface_alt.xml')
+    smileCascade= cv2.CascadeClassifier('/home/app/function/haarcascade_smile.xml')
 
     # grab the image
     req = urlopen(image_path)
@@ -92,3 +92,20 @@ def evaluate_model_smile(image_path):
         print(status)
     print(status)
     return status
+
+def face_det_crop_resize(img_gray):
+    """Returns a resized cropped (350, 350) grayscale image.
+
+    :param img_gray: an original grayscale image
+    :type img_gray: cv2 image
+    :return: a cropped (350, 350) grayscale image
+    :rtype: cv2 image
+    """
+    faceCascade = cv2.CascadeClassifier('/home/app/function/haarcascade_frontalface_alt.xml')
+    faces = faceCascade.detectMultiScale(img_gray, 1.3, 5)
+    rects = []
+    for (x,y,w,h) in faces:
+        face_clip = img_gray[y:y+h, x:x+w]  #cropping the face in image
+        img_gray_resize = cv2.resize(face_clip, (350, 350))  #resizing image
+        rects.append((x,w,y,h))
+    return rects, img_gray_resize
