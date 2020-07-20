@@ -6,6 +6,7 @@ from keras.models import load_model
 from keras.preprocessing.image import img_to_array
 import json
 
+
 def handle(req):
     """handle a request to the function
     Args:
