@@ -34,9 +34,7 @@ COPY function/requirements.txt	.
 COPY function/sample_model.hdf5 .
 COPY function/haarcascade_frontalface_alt.xml .
 
-RUN mkdir evaluating
-
-COPY function/evaluating/* evaluating/
+COPY function/evaluating/model_evaluation.py .
 
 RUN pip install -r requirements.txt --target=/home/app/python
 

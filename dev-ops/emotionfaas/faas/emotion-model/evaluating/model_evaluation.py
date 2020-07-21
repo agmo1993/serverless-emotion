@@ -6,7 +6,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array
 import os
 
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 '''
       Level | Level for Humans | Level Description                  
  -------|------------------|------------------------------------ 
@@ -53,9 +53,9 @@ def evaluate_sample_model(image_path):
     classes = {0: 'Happy', 1: 'Neutral', 2: 'Sad'}
     preds = preds[3:6]
     label = classes[preds.argmax()]
-    print('label: {} | prediction: {}'.format(label, preds))
-
-    return label, preds.argmax()
+    #print('label: {} | prediction: {}'.format(label, preds))
+    preds = preds[preds.argmax()]
+    return label, preds
 
 def evaluate_model_smile(image_path):
     """Evaluates a test video from path using following models:

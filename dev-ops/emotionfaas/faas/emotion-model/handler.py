@@ -4,7 +4,7 @@ import cv2
 from PIL import Image
 from keras.models import load_model
 from keras.preprocessing.image import img_to_array
-from evaluating import model_evaluation
+import function.model_evaluation as m_eval
 import json
 
 def handle(req):
@@ -15,7 +15,7 @@ def handle(req):
     url = req
     image = Image.open(urlopen(url))
     width, height = image.size
-    labels, prediction = model_evaluation.evaluate_sample_model(url)
+    labels, prediction = m_eval.evaluate_sample_model(url)
 
     return json.dumps({"prediction": labels, "Confidence level" : str(round(prediction,2))})
 
