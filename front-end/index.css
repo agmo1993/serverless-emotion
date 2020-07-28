@@ -1,76 +1,75 @@
 body{
   background-color: #020202;
-}
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 4.5fr 4.5fr 0.5fr;
-  margin-left: 2em;
-  margin-right: 2em;
-
-}
-
-.nav {
-  grid-column: 1 / 4;
-  border-bottom: 1px solid black;
-  background-color: #020202;
-  color: #ffffff;
-
+  margin-right: 70px;
+  margin-left: 70px;
 }
 
 header {
-  grid-column: 1 / 4;
+  overflow: hidden;
+  /*I set up position relatice so that the header-picture does not get out of the border of the header*/
+  position: relative;
   display: grid;
-  grid-template-columns: 3fr 5fr;
-  height: 65vh;
-  max-height: 600px;
-  background: black;
+  grid-template-columns: 5fr 7fr;
+  grid-template-areas: "header-logo header-nav" "hero-content .";
+  grid-template-rows: 2fr 10fr;
+  min-height: 600px;
+  align-items: center;
+  /**
+  Prevents elemnts of getting too close when wiewed on the device with small width*/
+  grid-column-gap: 20px;
 }
 
 
-header img {
-  place-self: center;
-  grid-column: 2/3;
-  height: 100%;
-  width: auto;
-  padding: 1rem 1rem 1rem 0;
-  transition: 180ms width ease-in;
+header .header-logo{
+  grid-area: header-logo;
+  justify-self: left;
+  padding-left: 20px;
 }
 
-header .hero__content {
-  grid-column: 1/2;
-  margin: 1rem 0 1rem 5%;
-  max-width: 100%;
-  min-width: 30ch;
-  z-index: 1;
-  border-radius: 1rem;
-  padding: 8rem 0.5rem 0.5rem 0;
+
+header .header-nav{
+  grid-area: header-nav;
+  background-color: #020202;
+  /*Not sure why I need to put relative position*/
+  position: relative;
+  justify-self: right;
 }
 
-header .hero__content p {
+header .header-nav a {
+  margin-right: 70px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+#last-link {
+  margin-right: 0px;
+}
+
+header .hero-content{
+  grid-area: hero-content;
+  align-self: center;
+  padding-left: 20px;
+  padding-bottom: 70px;
+}
+
+header .hero-content p {
   font-size: 1.75rem;
   color: #ffffff;
   text-align: center;
 }
 
-header .button {
-  font-size: 1.125rem;
-  font-weight: 500;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  justify-self: center;
+header button {
   background-color: #FFD301;
   color: #020202;
-  border-radius: 8px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
-  padding: 0.25em 0.75em;
-  min-width: 10ch;
-  min-height: 44px;
-  text-align: center;
-  line-height: 1.1;
-  transition: 220ms all ease-in-out;
+}
+
+header .header-image{
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  width: 500px;
 }
 
 
