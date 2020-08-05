@@ -1,0 +1,148 @@
+body{
+    background-color: #020202;
+    margin-right: 70px;
+    margin-left: 70px;
+  }
+  
+  header {
+    overflow: hidden;
+    /*I set up position relatice so that the header-picture does not get out of the border of the header*/
+    position: relative;
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    grid-template-areas: "header-logo header-nav" "hero-content .";
+    grid-template-rows: 2fr 10fr;
+    min-height: 600px;
+    align-items: center;
+    /**
+    Prevents elemnts of getting too close when wiewed on the device with small width*/
+    grid-column-gap: 20px;
+  }
+  
+  
+  header .header-logo{
+    grid-area: header-logo;
+    justify-self: left;
+    padding-left: 20px;
+  }
+  
+  
+  header .header-nav{
+    grid-area: header-nav;
+    background-color: #020202;
+    /*Not sure why I need to put relative position*/
+    position: relative;
+    justify-self: right;
+  }
+  
+  header .header-nav a {
+    margin-right: 70px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  
+  #last-link {
+    margin-right: 0px;
+  }
+  
+  header .hero-content{
+    grid-area: hero-content;
+    align-self: center;
+    padding-left: 20px;
+    padding-bottom: 70px;
+  }
+  
+  header .hero-content p {
+    font-size: 1.75rem;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  header button {
+    background-color: #FFD301;
+    color: #020202;
+  }
+  
+  header .header-image{
+    position: absolute;
+    top: 100px;
+    right: 0px;
+    width: 500px;
+  }
+  
+  
+  .button:hover, .button:active {
+    background-color: #228263;
+  }
+  .button:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 4px #1a614a;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    font-family: "Baloo 2", sans-serif;
+  }
+  
+  
+  .section {
+    grid-column: 1 / 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    margin-top: 0.5em;
+  }
+  
+  h1 {
+    margin-right: 3em;
+    margin-top: 2em;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-top: 5em;
+  }
+  
+  .cards {
+    background: white;
+    border-radius: 5px;
+    box-shadow: -8px 13px 35px 2px rgba(133, 133, 133, 1);
+    margin-top: 2em;
+    height: 100%;
+    align-items: center;
+  }
+  
+  .cards:hover {
+    transform: scale(1.1);
+  }
+  
+  .footer {
+    grid-column: 1 / 4;
+    margin-top: 2em;
+  }
+  
+  .footer h3 {
+    float: right;
+  }
+  
+  button {
+    display: block;
+    margin: auto;
+    background-color: #6b62fd;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
