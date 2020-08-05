@@ -1,18 +1,29 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html *
+{
+  font-family: 'Karla', sans-serif;
+}
+
 body{
+  border-right: 50px;
+  border-left: 50px;
   background-color: #020202;
-  margin-right: 70px;
-  margin-left: 70px;
 }
 
 header {
-  overflow: hidden;
   /*I set up position relatice so that the header-picture does not get out of the border of the header*/
+  padding-right: 50px;
+  padding-left: 50px;
   position: relative;
   display: grid;
   grid-template-columns: 5fr 7fr;
   grid-template-areas: "header-logo header-nav" "hero-content .";
   grid-template-rows: 2fr 10fr;
-  min-height: 600px;
+  min-height: 640px;
   align-items: center;
   /**
   Prevents elemnts of getting too close when wiewed on the device with small width*/
@@ -38,7 +49,7 @@ header .header-nav{
 header .header-nav a {
   margin-right: 70px;
   text-decoration: none;
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 20px;
   text-transform: uppercase;
 }
@@ -60,88 +71,207 @@ header .hero-content p {
   text-align: center;
 }
 
-header button {
-  background-color: #FFD301;
-  color: #020202;
-}
 
 header .header-image{
   position: absolute;
   top: 100px;
-  right: 0px;
-  width: 500px;
+  right: 51px;
+  width: 600px;
 }
 
 
 .button:hover, .button:active {
-  background-color: #228263;
+  background-color: #ffffff;;
 }
 .button:focus {
   outline-style: solid;
   outline-color: transparent;
-  box-shadow: 0 0 0 4px #1a614a;
 }
+
+
+.about{
+  background-color: white;
+  /*I set up position relatice so that the header-picture does not get out of the border of the header*/
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "about-heading about-heading" "info-1 info-2" "info-3 info-4" "learn-more-on-github learn-more-on-github";
+  grid-template-rows: 2fr 2fr 2fr 1fr;
+  min-height: 400px;
+  align-items: center;
+  justify-items: center;
+  /**
+  Prevents elemnts of getting too close when wiewed on the device with small width*/
+  grid-column-gap: 20px;
+}
+
+.about  .learn-more-on-github{
+  justify-self: center;
+  color: white;
+  background-color: black;
+  grid-area: learn-more-on-github;
+}
+.about .learn-more-on-github:hover, .learn-more-on-github:active{
+  background-color: #FFD301;
+  color: black;
+}
+
+.heading{
+  margin-top: 40px;
+  grid-area: about-heading;
+  font-size: 54px;
+  text-transform: uppercase;
+
+}
+
+.info{
+  font-size: 30px;
+}
+.info-1{
+  grid-area: info-1;
+  justify-self: right;
+}
+.info-2{
+  grid-area: info-2;
+  justify-self: left;
+}
+.info-3{
+  grid-area: info-3;
+  justify-self: right;
+}
+.info-4{
+  grid-area: info-4;
+  justify-self: left;
+}
+
+.technology{
+  background-color: white;
+  /*I set up position relatice so that the header-picture does not get out of the border of the header*/
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "heading heading heading heading" "svg1 svg2 svg3 svg4";
+  grid-template-rows: 1fr 2fr;
+  min-height: 400px;
+  align-items: center;
+  justify-items: center;
+  /**
+  Prevents elemnts of getting too close when wiewed on the device with small width*/
+  grid-column-gap: 20px;
+}
+
+.technology .used-technology{
+  grid-area: heading;
+}
+
+.svg1 img{
+  grid-area: svg1 ;
+  width: 300px;
+}
+
+.svg2 img {
+  grid-area: svg2;
+  width: 300px;
+}
+.svg3 img{
+  grid-area: svg3;
+  width: 300px;
+}
+
+.svg4 img{
+  grid-area: svg4;
+  width: 300px;
+}
+
 
 * {
   box-sizing: border-box;
 }
 
-body {
-  min-height: 100vh;
-  font-family: "Baloo 2", sans-serif;
-}
 
-
-.section {
-  grid-column: 1 / 4;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
-  margin-top: 0.5em;
-}
-
-h1 {
-  margin-right: 3em;
-  margin-top: 2em;
-}
-
-h2 {
-  text-align: center;
-  margin-top: 5em;
-}
-
-.cards {
-  background: white;
-  border-radius: 5px;
-  box-shadow: -8px 13px 35px 2px rgba(133, 133, 133, 1);
-  margin-top: 2em;
-  height: 100%;
-  align-items: center;
-}
-
-.cards:hover {
-  transform: scale(1.1);
-}
-
-.footer {
-  grid-column: 1 / 4;
-  margin-top: 2em;
-}
-
-.footer h3 {
-  float: right;
-}
-
-button {
+.button {
+  background-color: #FFD301;
+  color: #020202;
   display: block;
   margin: auto;
-  background-color: #6b62fd;
   border: none;
-  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
-  border-radius: 5px;
+  font-family: 'Inconsolata', monospace;
 }
+
+
+.our-team{
+  background-color: yellow;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "heading heading heading heading" "photo1 photo2 photo3 photo4";
+  grid-template-rows: 0.5fr 2fr;
+  min-height: 400px;
+  align-items: center;
+  justify-items: center;
+  /**
+  Prevents elemnts of getting too close when wiewed on the device with small width*/
+  grid-column-gap: 20px;
+}
+
+.our-team .our-team-heading{
+  grid-area: heading;
+  color: #303AA5;
+}
+
+.profile-pic{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.photo-1{
+  grid-area: photo1 ;
+}
+
+.photo-2{
+  grid-area: photo2;
+}
+.photo-3{
+  grid-area: photo3;
+}
+
+.photo-4{
+  grid-area: photo4;
+}
+
+ .linkedin-icon{
+  width: 30px;
+  display: inline-block;
+}
+
+ .git-icon{
+   width: 28px;
+   display: inline-block;
+ }
+
+ .container-icons{
+   text-align: center;
+ }
+
+.name{
+  display: grid;
+  border: #303AA5;
+  color: #303AA5;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  justify-items: center;
+}
+
+.icons{
+  display: inline-block;
+  margin: 0 auto;
+
+}
+
+
+
