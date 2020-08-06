@@ -12,12 +12,14 @@ def handle(req):
     Args:
         req (str): request body
     """
+
     url = req
     image = Image.open(urlopen(url))
     width, height = image.size
     labels, prediction = m_eval.evaluate_sample_model(url)
 
-    return json.dumps({"prediction": labels, "Confidence level" : str(round(prediction,2))})
+    output = {"prediction": labels, "Confidence level" : str(round(prediction,2))}
+    return json.dumps(output)
 
 ##def evaluate_sample_model(image_path):
 ##    """Evaluates a test video from path using following models:
