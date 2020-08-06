@@ -1,7 +1,7 @@
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400&family=Roboto+Condensed:wght@300&display=swap');
 
 html *
 {
@@ -15,16 +15,36 @@ body{
   background-color: white;
 }
 
+.nav-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-bottom: 62px;
+
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 header {
   /*I set up position relatice so that the header-picture does not get out of the border of the header*/
   padding-right: 50px;
   padding-left: 50px;
   position: relative;
   display: grid;
-  grid-template-columns: 5fr 7fr;
-  grid-template-areas: "header-logo header-nav" "hero-content .";
-  grid-template-rows: 1fr 10fr;
-  min-height: 640px;
+  grid-template-columns: 7fr 7fr;
+  grid-template-areas: "hero-content .";
+  grid-template-rows: 10fr;
+  min-height: 500px;
   align-items: center;
   /**
   Prevents elemnts of getting too close when wiewed on the device with small width*/
@@ -32,7 +52,7 @@ header {
 }
 
 
-header .header-logo{
+.header-logo{
   grid-area: header-logo;
   justify-self: left;
   width: 120px;
@@ -40,21 +60,16 @@ header .header-logo{
 
 }
 
-
-header .header-nav{
-  grid-area: header-nav;
-  background-color: white;
-  /*Not sure why I need to put relative position*/
-  position: relative;
-  justify-self: right;
-}
-
-header .header-nav a {
-  margin-right: 70px;
-  text-decoration: none;
+.header-nav a {
+  float: right;
+  display: inline-block;
   color: #111111;
-  font-size: 20px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
   text-transform: uppercase;
+  padding-top: 15px;
 }
 
 #last-link {
@@ -64,28 +79,30 @@ header .header-nav a {
 header .hero-content{
   grid-area: hero-content;
   align-self: center;
-  padding-left: 20px;
-  padding-bottom: 70px;
-  line-height: 36px;
+  /*padding-left: 20px;*/
+  padding-bottom: 158px;
+  line-height: 40px;
 }
 
 header .hero-content p {
   font-size: 1.75rem;
   color: #111111;
-  text-align: center;
+  text-align: left;
+  margin-top: 160px;
+  margin-bottom: 15px;
 }
 
 
 header .header-image{
   position: absolute;
-  top: 100px;
-  right: 51px;
-  width: 600px;
+  top: 90px;
+  right: 120px;
+  width: 450px;
 }
 
 
 .button:hover, .button:active {
-  background-color: #ffffff;;
+  background-color: #CB0500;
 }
 .button:focus {
   outline-style: solid;
@@ -94,15 +111,17 @@ header .header-image{
 
 
 .about{
+  padding-left: 50px;
+  padding-right: 50px;
   background-color: white;
   /*I set up position relatice so that the header-picture does not get out of the border of the header*/
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "about-heading about-heading" "info-1 info-2" "info-3 info-4" "learn-more-on-github learn-more-on-github";
-  grid-template-rows: 2fr 2fr 2fr 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
   min-height: 400px;
-  align-items: center;
+  align-items: flex-start;
   justify-items: center;
   /**
   Prevents elemnts of getting too close when wiewed on the device with small width*/
@@ -111,9 +130,10 @@ header .header-image{
 
 .about  .learn-more-on-github{
   justify-self: center;
-  color: white;
-  background-color: black;
+  color: #111111;
+  background-color: white;
   grid-area: learn-more-on-github;
+  border: solid 1px;
 }
 .about .learn-more-on-github:hover, .learn-more-on-github:active{
   background-color: #FFD301;
@@ -121,11 +141,12 @@ header .header-image{
 }
 
 .heading{
-  margin-top: 40px;
   grid-area: about-heading;
-  font-size: 54px;
+  font-size: 150px;
   text-transform: uppercase;
-
+  font-weight: 300;
+  font-family: "Roboto Condensed", sans-serifan;
+  color: #222222;
 }
 
 .info{
@@ -194,17 +215,18 @@ header .header-image{
 
 
 .button {
-  background-color: #FFD301;
-  color: #020202;
+  background-color: #E10600FF;
+  color: white;
   display: block;
-  margin: auto;
+  margin: 0;
   border: none;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 18px;
   cursor: pointer;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Roboto', monospace;
+  font-weight: 400;
 }
 
 
