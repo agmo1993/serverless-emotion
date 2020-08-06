@@ -1,17 +1,18 @@
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300&display=swap');
 
 html *
 {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 body{
   border-right: 50px;
   border-left: 50px;
-  background-color: #020202;
+  background-color: white;
 }
 
 header {
@@ -22,7 +23,7 @@ header {
   display: grid;
   grid-template-columns: 5fr 7fr;
   grid-template-areas: "header-logo header-nav" "hero-content .";
-  grid-template-rows: 2fr 10fr;
+  grid-template-rows: 1fr 10fr;
   min-height: 640px;
   align-items: center;
   /**
@@ -34,13 +35,15 @@ header {
 header .header-logo{
   grid-area: header-logo;
   justify-self: left;
-  padding-left: 20px;
+  width: 120px;
+  padding-top: 5px;
+
 }
 
 
 header .header-nav{
   grid-area: header-nav;
-  background-color: #020202;
+  background-color: white;
   /*Not sure why I need to put relative position*/
   position: relative;
   justify-self: right;
@@ -49,7 +52,7 @@ header .header-nav{
 header .header-nav a {
   margin-right: 70px;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.9);
+  color: #111111;
   font-size: 20px;
   text-transform: uppercase;
 }
@@ -63,11 +66,12 @@ header .hero-content{
   align-self: center;
   padding-left: 20px;
   padding-bottom: 70px;
+  line-height: 36px;
 }
 
 header .hero-content p {
   font-size: 1.75rem;
-  color: #ffffff;
+  color: #111111;
   text-align: center;
 }
 
@@ -145,7 +149,7 @@ header .header-image{
 }
 
 .technology{
-  background-color: white;
+  background-color: #FFD301;
   /*I set up position relatice so that the header-picture does not get out of the border of the header*/
   position: relative;
   display: grid;
