@@ -74,6 +74,7 @@ header {
 
 #last-link {
   margin-right: 0px;
+  padding-right: 0px;
 }
 
 header .hero-content{
@@ -117,12 +118,12 @@ header .header-image{
   /*I set up position relatice so that the header-picture does not get out of the border of the header*/
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "about-heading about-heading" "info-1 info-2" "info-3 info-4" "learn-more-on-github learn-more-on-github";
-  grid-template-rows: 1fr 2fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "about-heading info-1 info-2"  ".info-3 info-4" ". learn-more-on-github .";
+  grid-template-rows: 2fr 2fr 1fr ;
   min-height: 400px;
   align-items: flex-start;
-  justify-items: center;
+  justify-items: left;
   /**
   Prevents elemnts of getting too close when wiewed on the device with small width*/
   grid-column-gap: 20px;
@@ -133,52 +134,61 @@ header .header-image{
   color: #111111;
   background-color: white;
   grid-area: learn-more-on-github;
-  border: solid 1px;
+  border: solid 0.5px;
+  font-weight: 200;
 }
 .about .learn-more-on-github:hover, .learn-more-on-github:active{
-  background-color: #FFD301;
-  color: black;
+  background-color: #F0F0F0;
+  color: #111111;
 }
 
 .heading{
   grid-area: about-heading;
-  font-size: 150px;
+  font-size: 20px;
+  justify-self: left;
   text-transform: uppercase;
   font-weight: 300;
-  font-family: "Roboto Condensed", sans-serifan;
+  font-family: "Roboto", sans-serifan;
   color: #222222;
 }
 
 .info{
   font-size: 30px;
+  align-self: start;
+  justify-self: center;
+  font-weight: 200;
+  text-transform: uppercase;
+
+
+
+
 }
 .info-1{
   grid-area: info-1;
-  justify-self: right;
 }
 .info-2{
   grid-area: info-2;
-  justify-self: left;
 }
 .info-3{
   grid-area: info-3;
-  justify-self: right;
 }
 .info-4{
   grid-area: info-4;
-  justify-self: left;
 }
 
 .technology{
-  background-color: #FFD301;
+  padding-top: 80px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: white;
   /*I set up position relatice so that the header-picture does not get out of the border of the header*/
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas: "heading heading heading heading" "svg1 svg2 svg3 svg4";
-  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "heading svg1 svg2" "heading svg3 svg4";
+  grid-template-rows: 1fr 1fr;
   min-height: 400px;
-  align-items: center;
+  align-items: start;
   justify-items: center;
   /**
   Prevents elemnts of getting too close when wiewed on the device with small width*/
@@ -187,6 +197,7 @@ header .header-image{
 
 .technology .used-technology{
   grid-area: heading;
+  align-self: start;
 }
 
 .svg1 img{
@@ -220,7 +231,7 @@ header .header-image{
   display: block;
   margin: 0;
   border: none;
-  padding: 15px 32px;
+  padding: 15px 7px;
   text-align: center;
   text-decoration: none;
   font-size: 18px;
@@ -231,7 +242,8 @@ header .header-image{
 
 
 .our-team{
-  background-color: yellow;
+  padding-left: 50px;
+  padding-right: 50px;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
