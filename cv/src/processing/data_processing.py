@@ -8,11 +8,11 @@ def face_det_crop_resize(img_gray):
     :return: a cropped (350, 350) grayscale image
     :rtype: cv2 image
     """
-    faceCascade = cv2.CascadeClassifier('/home/ubuntu/serverless-emotion/cv/model/haarcascade_frontalface_alt.xml')
+    faceCascade = cv2.CascadeClassifier('../model/haarcascade_frontalface_alt.xml')
     faces = faceCascade.detectMultiScale(img_gray, 1.3, 5)
-    rects = []
-    for (x,y,w,h) in faces:
-        face_clip = img_gray[y:y+h, x:x+w]  #cropping the face in image
-        img_gray_resize = cv2.resize(face_clip, (350, 350))  #resizing image
-        rects.append((x,w,y,h))
-    return rects, img_gray_resize
+    if len(faces) > 0:
+        for (x,y,w,h) in faces:
+            face_clip = img_gray[y:y+h, x:x+w]  #cropping the face in image
+            img_gray_resize = cv2.resize(face_clip, (224, 224))  #resizing image
+        return img_gray_resize
+    return None
