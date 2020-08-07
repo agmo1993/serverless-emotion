@@ -11,8 +11,8 @@
         <div class="nav-container">
             <div class="header-nav">
                 <img href="#" class="header-logo" src="sources/ServerlessEmotion@2x.png">
-                <a href="#" class="header-nav-link" id="last-link"> Used Technology </a>
-                <a href="#" class="header-nav-link" > Our Team </a>
+                <a href="#" class="header-nav-link" id="last-link" > Our Team </a>
+                <a href="#" class="header-nav-link" > Used Technology </a>
                 <a href="#" class="header-nav-link" > PROJECT DETAILS </a>
             </div>
         </div>
@@ -20,33 +20,29 @@
       <header>
         <img class="header-image" src="sources/smile@2x.jpg" alt="picture of happy person">
         <div class="hero-content">
-          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          <p>The serverless emotion detection application that extracts facial features from an input image and outputs a corresponding emotion prediction.
             </p>
           <button href="#" class="button">Analyze Your Own Picture</button>
         </div>
       </header>
       <div class="about">
           <div class="heading about-heading">Project Details</div>
-          <div class="info info-1">Reliability</div>
-          <div class="info info-2">Scalability</div>
-          <div class="info info-3">Responose</div>
-          <div class="info info-4">Serverless</div>
+          <div class="info info-1">The emotion detection model here is an application of computer vision technology, which can extract facial features from an input image and output a corresponding prediction of the person's emotion in that image.<br> <br> The initial model can detect a smile and seven different expressions: Angry, Disgust, Fearful, Happy, Neutral, Sad, and Surprised.<br> <br> In this application, a simplified version is implemented with three basic emotions to be detecting: Happy, Neutral, and Sad. This model is developed on Python, using TensorFlow and OpenCV.</div>
+          <div class="info info-2">Our application is stateless and ephemeral. This makes it able to scale up and down as the load increased or decreases - and ideal for parallel execution.<br> <br> The emotion detection model function is deployed using OpenFaas, an open-source framework for hosting serverless functions.<br> <br> Every function is housed in a Docker container. It is managed using Docker Swarm, which can add more Docker containers when the function is called more often.</div>
           <button href="#" class="button learn-more-on-github">Learn More On Github</button>
-      </div>
-      <div class="technology">
+
           <div class="heading used-technology">Used Technology</div>
           <div class="svg svg1">
-              <img src="sources/tensorflow-ar21(1).svg" alt="tensor flow icon">
+              <img src="sources/techn-icons/tensor-flow.svg" alt="tensor flow icon">
           </div>
           <div class="svg svg2">
-              <img src="sources/docker-export.svg" alt="docker icon">
+              <img src="sources/techn-icons/docker-export.svg" alt="docker icon">
           </div>
           <div class="svg svg3">
-              <img src="sources/try.svg" alt="open fass icon">
+              <img src="sources/techn-icons/open-faas.svg" alt="open fass icon">
           </div>
           <div class="svg svg4">
-              <img src="sources/reactjs-ar21.svg" alt="react icon">
+              <img src="sources/techn-icons/react.png" alt="react icon">
           </div>
       </div>
       <div class="our-team">
@@ -63,7 +59,7 @@
               </div>
           </div>
           <div class="photo-2">
-              <img src="sources/hai.png">
+              <img class="profile-pic" src="sources/hai.png">
               <br>
               <div class="name">Abdul Mohhamad</div>
               <div class="container-icons">
@@ -75,7 +71,7 @@
 
           </div>
           <div class="photo-3">
-              <img src="sources/hai.png">
+              <img class="profile-pic" src="sources/hai.png">
               <br>
               <div class="name">Ernesto Calderon</div>
               <div class="container-icons">
@@ -86,7 +82,7 @@
               </div>
           </div>
           <div class="photo-4">
-              <img src="sources/hai.png">
+              <img class="profile-pic" src="sources/hai.png">
               <br>
               <div class="name">Eldar Kurmakaev</div>
               <div class="container-icons">

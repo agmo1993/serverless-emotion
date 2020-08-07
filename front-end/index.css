@@ -29,11 +29,6 @@ body{
 
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
 
 header {
   /*I set up position relatice so that the header-picture does not get out of the border of the header*/
@@ -119,8 +114,8 @@ header .header-image{
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: "about-heading info-1 info-2"  ".info-3 info-4" ". learn-more-on-github .";
-  grid-template-rows: 2fr 2fr 1fr ;
+  grid-template-areas: "about-heading info-1 info-2" "about-heading learn-more-on-github learn-more-on-github" "heading-technology svg1 svg2" "heading-technology svg3 svg4" ;
+  grid-template-rows: 2fr 2fr 1fr 1fr ;
   min-height: 400px;
   align-items: flex-start;
   justify-items: left;
@@ -130,12 +125,14 @@ header .header-image{
 }
 
 .about  .learn-more-on-github{
-  justify-self: center;
   color: #111111;
   background-color: white;
   grid-area: learn-more-on-github;
   border: solid 0.5px;
   font-weight: 200;
+  justify-self: stretch;
+  margin-top: 50px;
+
 }
 .about .learn-more-on-github:hover, .learn-more-on-github:active{
   background-color: #F0F0F0;
@@ -143,24 +140,28 @@ header .header-image{
 }
 
 .heading{
-  grid-area: about-heading;
   font-size: 20px;
   justify-self: left;
   text-transform: uppercase;
   font-weight: 300;
   font-family: "Roboto", sans-serifan;
   color: #222222;
+
+}
+
+.about-heading{
+  grid-area: about-heading;
+
+}
+
+.technology .used-technology{
+  grid-area: heading-technology;
+  align-self: start;
 }
 
 .info{
-  font-size: 30px;
   align-self: start;
-  justify-self: center;
   font-weight: 200;
-  text-transform: uppercase;
-
-
-
 
 }
 .info-1{
@@ -169,61 +170,41 @@ header .header-image{
 .info-2{
   grid-area: info-2;
 }
-.info-3{
-  grid-area: info-3;
-}
-.info-4{
-  grid-area: info-4;
+
+.svg img{
+  height: 50px;
 }
 
-.technology{
-  padding-top: 80px;
-  padding-left: 50px;
-  padding-right: 50px;
-  background-color: white;
-  /*I set up position relatice so that the header-picture does not get out of the border of the header*/
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: "heading svg1 svg2" "heading svg3 svg4";
-  grid-template-rows: 1fr 1fr;
-  min-height: 400px;
-  align-items: start;
-  justify-items: center;
-  /**
-  Prevents elemnts of getting too close when wiewed on the device with small width*/
-  grid-column-gap: 20px;
-}
-
-.technology .used-technology{
-  grid-area: heading;
-  align-self: start;
-}
-
-.svg1 img{
+.svg1{
   grid-area: svg1 ;
-  width: 300px;
+}
+
+.svg1 img {
+
+}
+
+.svg2 {
+  grid-area: svg2;
 }
 
 .svg2 img {
-  grid-area: svg2;
-  width: 300px;
+
+}
+
+.svg3{
+  grid-area: svg3;
 }
 .svg3 img{
-  grid-area: svg3;
-  width: 300px;
+
+}
+
+.svg4{
+  grid-area: svg4;
 }
 
 .svg4 img{
-  grid-area: svg4;
-  width: 300px;
+
 }
-
-
-* {
-  box-sizing: border-box;
-}
-
 
 .button {
   background-color: #E10600FF;
@@ -244,6 +225,7 @@ header .header-image{
 .our-team{
   padding-left: 50px;
   padding-right: 50px;
+  padding-bottom: 100px;
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -259,12 +241,10 @@ header .header-image{
 
 .our-team .our-team-heading{
   grid-area: heading;
-  color: #303AA5;
 }
 
 .profile-pic{
-  margin-left: auto;
-  margin-right: auto;
+  width: 200px;
 }
 
 .photo-1{
@@ -298,8 +278,6 @@ header .header-image{
 
 .name{
   display: grid;
-  border: #303AA5;
-  color: #303AA5;
   padding-top: 2px;
   padding-bottom: 2px;
   justify-items: center;
