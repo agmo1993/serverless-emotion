@@ -8,7 +8,9 @@ COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog
 RUN apt-get update \
     && apt-get install -y ca-certificates ${ADDITIONAL_PACKAGE} \
-    && rm -rf /var/lib/apt/lists/
+    && rm -rf /var/lib/apt/lists/ \
+    && apt-get update \
+    && apt-get -qy install libgl1-mesa-glx
 
 # Add non root user
 RUN groupadd app && useradd -r -g app app
@@ -30,6 +32,8 @@ RUN mkdir -p function
 RUN touch ./function/__init__.py
 
 WORKDIR /home/app/function/
+
+COPY function/haarcascade_smile.xml .
 COPY function/requirements.txt	.
 COPY function/sample_model.hdf5 .
 COPY function/haarcascade_frontalface_alt.xml .
