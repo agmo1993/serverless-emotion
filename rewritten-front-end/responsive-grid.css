@@ -1,0 +1,190 @@
+.heading-content{
+    grid-area: heading-content;
+}
+
+.heading-picture{
+    grid-area: heading-picture;
+}
+
+.project-details-title{
+    grid-area: project-details-title;
+    margin-top: 5vw;
+}
+
+.project-details-t1{
+    grid-area:project-details-t1;
+}
+
+.project-details-t2{
+    grid-area: project-details-t2;
+}
+
+.learn-more-on-github{
+    grid-area: learn-more-on-github;
+}
+
+.used-technology-title{
+    grid-area: used-technology-title;
+}
+
+.used-technology-t1{
+    grid-area: used-technology-t1;
+}
+
+.used-technology-t2{
+    grid-area: used-technology-t2;
+}
+
+.used-technology-t3{
+    grid-area: used-technology-t3;
+}
+
+.used-technology-t3{
+    grid-area: used-technology-t3;
+}
+
+.our-team-title{
+    grid-area: our-team-title;
+}
+
+.our-team-p1{
+    grid-area: our-team-p1;
+}
+
+.our-team-p2{
+    grid-area: our-team-p2;
+}
+
+.our-team-p3{
+    grid-area: our-team-p3;
+}
+
+.our-team-p4{
+    grid-area: our-team-p4;
+}
+
+
+@media only screen and (min-width: 700px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 200px 1fr 1fr;
+        grid-template-rows: auto ;
+        grid-template-areas: "heading-content heading-content heading-picture" "project-details-title project-details-t1 project-details-t2" "project-details-title learn-more-on-github learn-more-on-github" "used-technology-title used-technology-t1 used-technology-t2" "used-technology-title used-technology-t3 used-technology-t4" "our-team-title our-team-p1 our-team-p2" "our-team-title our-team-p3 our-team-p4" ;
+        max-width: 910px;
+        grid-column-gap: 20px;
+    }
+
+    .heading-picture{
+        max-width: 118%;
+        margin-left: -56px;
+    }
+
+    .learn-more-on-github{
+        margin-bottom: 3em;
+        margin-top: 1%;
+    }
+
+    .our-team-title{
+        margin-top: 2em;
+    }
+
+    .our-team-p1{
+        margin-top: 3em;
+    }
+
+    .our-team-p2{
+        margin-top: 3em;
+    }
+
+    .used-technology-title{
+        margin-top: 1em;
+    }
+    hr{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .wrapper {
+        display: grid;
+        width: 90%;
+        grid-template-columns: auto ;
+        grid-template-rows: auto ;
+        grid-template-areas: "heading-content"
+        "project-details-title"
+        "project-details-t1"
+        "project-details-t2"
+        "learn-more-on-github"
+        "used-technology-title"
+        "used-technology-t1"
+        "used-technology-t2"
+        "used-technology-t3"
+        "used-technology-t4"
+        "our-team-title"
+        "our-team-p1"
+        "our-team-p2"
+        "our-team-p3"
+        "our-team-p4"
+    ;
+    }
+    .heading-picture{
+        display: none;
+    }
+    .heading-content{
+        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("sources/smile@2x.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        font-size: 112%;
+        width: 112%;
+        background-position: center top;
+        height: 64vw;
+        margin-left: -6%;
+        text-align: center;
+    }
+    
+    html{
+        overflow-x: hidden;
+    }
+    
+    h1{
+        margin:10vw 10% 4vw 10%;
+        font-size: 5vw;
+    }
+    
+    .title{
+        margin-top: 6vw;
+    }
+    
+    .project-details{
+        margin-top: 0px;
+    }
+    
+    hr{
+        margin-bottom: 6px;
+        color: #C4C4C4;
+        width: 12%;
+        margin-top: 21px;
+    }
+    p{
+        padding: 1px;
+    }
+    
+    .learn-more-on-github{
+        margin-top: 3vw;
+    }
+    
+    img.used-technology-t1{
+        margin-top:-4vw;
+    }
+    
+    img.used-technology-t3{
+        margin-top: 10vw;
+    }
+    
+     img.used-technology-t4{
+        margin-top: 3vw;
+    }
+    
+
+}
