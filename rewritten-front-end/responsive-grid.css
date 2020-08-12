@@ -8,7 +8,7 @@
 
 .project-details-title{
     grid-area: project-details-title;
-    margin-top: 5vw;
+    padding-top: 5vw;
 }
 
 .project-details-t1{
@@ -79,25 +79,20 @@
         margin-left: -56px;
     }
 
-    .learn-more-on-github{
-        margin-bottom: 3em;
-        margin-top: 1%;
-    }
-
     .our-team-title{
-        margin-top: 2em;
+        padding-top: 2em;
     }
 
     .our-team-p1{
-        margin-top: 3em;
+        padding-top: 3em;
     }
 
     .our-team-p2{
-        margin-top: 3em;
+        padding-top: 3em;
     }
 
     .used-technology-title{
-        margin-top: 1em;
+        padding-top: 1em;
     }
     hr{
         display: none;
@@ -148,42 +143,35 @@
     }
     
     h1{
-        margin:10vw 10% 4vw 10%;
+        padding: 10vw 10% 4vw 10%;
         font-size: 5vw;
     }
     
     .title{
-        margin-top: 6vw;
+        padding-top: 6vw;
     }
-    
-    .project-details{
-        margin-top: 0px;
-    }
+
     
     hr{
-        margin-bottom: 6px;
+        padding-bottom: 6px;
         color: #C4C4C4;
         width: 12%;
-        margin-top: 21px;
+        padding-top: 21px;
     }
     p{
         padding: 1px;
     }
     
-    .learn-more-on-github{
-        margin-top: 3vw;
-    }
-    
     img.used-technology-t1{
-        margin-top:-4vw;
+        padding-top:-4vw;
     }
     
     img.used-technology-t3{
-        margin-top: 10vw;
+        padding-top: 10vw;
     }
     
      img.used-technology-t4{
-        margin-top: 3vw;
+        padding-top: 3vw;
     }
     
 

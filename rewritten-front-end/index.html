@@ -4,38 +4,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
 
     <title>Serverless Emotion</title>
     <link rel="stylesheet" type="text/css" href="common.css">
     <link rel="stylesheet" type="text/css" href="responsive-grid.css">
 </head>
-<body>
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-
-    <a class="navbar-brand" href="#">
+<body id="page-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="mainNav">
+    <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
         <img href="#" class="logo" src="../rewritten-front-end/sources/ServerlessEmotion@2x.png">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">PROJECT DETAILS <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#details">PROJECT DETAILS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">TECHNOLOGY</a>
+                <a class="nav-link js-scroll-trigger" href="#technology">TECHNOLOGY</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">OUR TEAM</a>
+                <a class="nav-link js-scroll-trigger" href="#team">OUR TEAM</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">TERMS AND CONDITIONS</a>
             </li>
         </ul>
+    </div>
     </div>
 </nav>
     <div class="wrapper">
@@ -46,7 +50,7 @@
             <button href="#" class="button">Analyze Your Own Picture</button>
         </div>
         <img class="heading-picture" src ="sources/smile@2x.jpg">
-        <h2 class="project-details-title title">
+        <h2 class="project-details-title title" id="details">
             Project Details
         </h2>
         <div class="project-details project-details-t1">
@@ -79,7 +83,7 @@
 
 
 <!--        <button class="project-details-button"></button>-->
-        <h2 class="used-technology-title title">
+        <h2 class="used-technology-title title" id="technology">
             Technology
         </h2>
         <img class="used-technology-t1" src="techn-icons/tensorflow-ar21(1).svg">
@@ -87,9 +91,9 @@
         <img class="used-technology-t3" src="techn-icons/open-faas.svg">
         <img class="used-technology-t4" src="techn-icons/reactjs-ar21.svg">
 
-        <h2 class="our-team-title title">Our Team</h2>
+        <h2 class="our-team-title title" id="team">Our Team</h2>
 
-        <div class="our-team our-team-p1">
+        <div class="our-team our-team-p1" >
             <img class="profile-pic" src="profile-resources/hai.png">
             <br>
             <div class="name">Hai Ho Dac</div>
@@ -157,11 +161,22 @@
 
         </div>
     </div>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Serverless Emotion 2020</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom JavaScript for this theme -->
+<script src="js/scrolling-nav.js"></script>
 </body>
 </html>
