@@ -73,11 +73,28 @@
         max-width: 910px;
         grid-column-gap: 20px;
     }
+    .heading-content{
+        margin-right: 35px;
+    }
 
     .heading-picture{
         max-width: 118%;
         margin-left: -56px;
     }
+
+    .used-technology-title{
+        padding-top: 2em;
+    }
+
+    .used-technology-t1{
+        padding-top: 2em;
+    }
+
+    .used-technology-t2{
+        padding-top: 2em;
+    }
+
+
 
     .our-team-title{
         padding-top: 2em;
@@ -91,9 +108,6 @@
         padding-top: 3em;
     }
 
-    .used-technology-title{
-        padding-top: 1em;
-    }
     hr{
         display: none;
     }
@@ -173,6 +187,9 @@
      img.used-technology-t4{
         padding-top: 3vw;
     }
-    
+
+     .our-team-title{
+         padding-bottom: 6vw ;
+     }
 
 }
