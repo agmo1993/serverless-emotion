@@ -9,6 +9,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link href="css/modal-popup.css" rel="stylesheet">
 
     <title>Serverless Emotion</title>
     <link rel="stylesheet" type="text/css" href="common.css">
@@ -18,7 +19,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="mainNav">
     <div class="container">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <img href="#" class="logo" src="../sources/ServerlessEmotion@2x.png">
+        <img href="#" class="logo" src="./sources/ServerlessEmotion@2x.png">
     </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -42,12 +43,15 @@
     </div>
     </div>
 </nav>
+    
+
+    </div>
     <div class="wrapper">
         <div class="heading-content">
             <h1>
                 The serverless emotion detection application that extracts facial features from an input image and outputs a corresponding emotion prediction.
             </h1>
-            <button href="#" class="button">Analyze Your Own Picture</button>
+            <button id="button" href="#" class="button">Analyze Your Own Picture</button>
         </div>
         <img class="heading-picture" src ="sources/smile@2x.jpg">
         <h2 class="project-details-title title" id="details">
@@ -162,6 +166,17 @@
         </div>
     </div>
 
+    <div class="bg-modal">
+        <div class="modal-contents">
+            <div class="close">+</div>   
+            <form action="">
+                <input type="text" placeholder="Type something..." id="myInput">
+                <button type="submit" class="button" onclick="loadDoc(myFunction)">Submit</button>
+            </form>
+    
+        </div>
+    </div>
+
 <footer class="py-5 bg-dark">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Serverless Emotion 2020</p>
@@ -178,5 +193,7 @@
 
 <!-- Custom JavaScript for this theme -->
 <script src="js/scrolling-nav.js"></script>
+<script src="js/modal-popup-script.js"></script>
+<script src="js/send-url-script.js"></script>
 </body>
 </html>
