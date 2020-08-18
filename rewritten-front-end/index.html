@@ -43,15 +43,27 @@
     </div>
     </div>
 </nav>
-    
+
+<div class="bg-modal">
+    <div class="modal-contents">
+        <div class="close">+</div>   
+        <form action="">
+            <input type="text" placeholder="Insert URL" id="myInput">
+            <button type="submit" class="button" onclick="loadDoc(myFunction)">Submit</button>
+            <div id="demo"></div>
+        </form>
 
     </div>
+</div>    
+
+    </div>
+
     <div class="wrapper">
         <div class="heading-content">
             <h1>
                 The serverless emotion detection application that extracts facial features from an input image and outputs a corresponding emotion prediction.
             </h1>
-            <button id="button" href="#" class="button">Analyze Your Own Picture</button>
+            <button id="button" class="button">Analyze Your Own Picture</button>
         </div>
         <img class="heading-picture" src ="sources/smile@2x.jpg">
         <h2 class="project-details-title title" id="details">
@@ -114,7 +126,7 @@
             </div>
         </div>
         <div class="our-team our-team-p2">
-            <img class="profile-pic" src="profile-resources/hai.png">
+            <img class="profile-pic" src="profile-resources/abdul.png">
             <br>
             <div class="name">Abdul Mohhamad</div>
             <div class="container-icons">
@@ -131,7 +143,7 @@
 
         </div>
         <div class="our-team our-team-p3">
-            <img class="profile-pic" src="profile-resources/hai.png">
+            <img class="profile-pic" src="profile-resources/ernesto.png">
             <br>
             <div class="name">Ernesto Calderon</div>
             <div class="container-icons">
@@ -166,17 +178,6 @@
         </div>
     </div>
 
-    <div class="bg-modal">
-        <div class="modal-contents">
-            <div class="close">+</div>   
-            <form action="">
-                <input type="text" placeholder="Type something..." id="myInput">
-                <button type="submit" class="button" onclick="loadDoc(myFunction)">Submit</button>
-            </form>
-    
-        </div>
-    </div>
-
 <footer class="py-5 bg-dark">
     <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Serverless Emotion 2020</p>
@@ -192,8 +193,8 @@
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom JavaScript for this theme -->
-<script src="js/scrolling-nav.js"></script>
 <script src="js/modal-popup-script.js"></script>
 <script src="js/send-url-script.js"></script>
+<script src="js/scrolling-nav.js"></script>
 </body>
 </html>

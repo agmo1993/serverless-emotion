@@ -15,5 +15,6 @@ function loadDoc(cFunction) {
   function myFunction(xhttp) {
     document.getElementById("demo").innerHTML =
     xhttp.responseText;
-    alert(xhttp.responseText);
+    console.log("Completed")
+    //alert(xhttp.responseText);
   }
