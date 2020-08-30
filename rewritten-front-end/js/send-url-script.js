@@ -10,11 +10,26 @@ function loadDoc(cFunction) {
     };
     var inputVal = document.getElementById("myInput").value;
     xhttp.send(inputVal);
-  }
+}
   
-  function myFunction(xhttp) {
-    document.getElementById("demo").innerHTML =
-    xhttp.responseText;
-    console.log("Completed")
+function myFunction(xhttp) {
+  
+  document.getElementById("components_result").style.display = "none";
+  document.getElementById("cross_result").style.display = "block";
+  
+  document.getElementById("demo").innerHTML = xhttp.responseText;
+  console.log("Completed")
+
+    // document.getElementById("span_result").style.display = "none";
+    // document.getElementById("icon_result").style.display = "none";
+    // document.getElementById("cross_result").style.display = "block";
+  
+    
     //alert(xhttp.responseText);
-  }
+}
+
+function returnElements() {
+  document.getElementById("cross_result").style.display = "none";
+  document.getElementById("components_result").style.display = "block";
+  document.getElementById("demo").innerHTML = "";
+}

@@ -8,12 +8,18 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/scrolling-nav.css" rel="stylesheet">
-    <link href="css/modal-popup.css" rel="stylesheet">
+    <link href="css/scrolling-nav.css" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+
 
     <title>Serverless Emotion</title>
-    <link rel="stylesheet" type="text/css" href="common.css">
-    <link rel="stylesheet" type="text/css" href="responsive-grid.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive-grid.css">
+    
+
 </head>
 <body id="page-top">
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="mainNav">
@@ -44,139 +50,149 @@
     </div>
 </nav>
 
-<div class="bg-modal">
-    <div class="modal-contents">
-        <div class="close">+</div>   
-        <form action="">
-            <input type="text" placeholder="Insert URL" id="myInput">
-            <button type="submit" class="button" onclick="loadDoc(myFunction)">Submit</button>
-            <div id="demo"></div>
-        </form>
-
+<div class="wrapper">
+    
+    <div class="heading-content">
+        <h1>
+            The serverless emotion detection application that extracts facial features from an input image and outputs a corresponding emotion prediction.
+        </h1>
+        <div class="js-upload" style="margin-top: 25px;">
+            <input type="text" placeholder="Image URL" id="myInput">
+            <input id="button_input" type="button" class="uk-button uk-button-primary" style="margin-left: 15px; border-radius: 20px;" onclick="loadDoc(myFunction)" value="Analyze Your Own Picture"> 
+        </div>
     </div>
-</div>    
+    <img class="heading-picture" src ="sources/smile@2x.jpg">
+    
+    <div class="heading-result" id="heading-result_id">
+        <div class="uk-text-center">
+            <div class="js-upload uk-placeholder uk-text-center" >
+                <div id="cross_result" class="close" onclick="returnElements()" style="display: none;">+</div>
+                <div id="components_result">
+                    <span  uk-icon="icon: cloud-upload"></span>
+                    <span  class="uk-text-middle">Upload an image by dropping it here or</span>
+                    <div uk-form-custom>
+                        <input type="file" multiple>
+                        <span  class="uk-link">selecting one</span>
+                        
+                    </div>
+                </div>
+                <div id="demo"></div>
+            </div>  
+            <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>   
+        </div>
+    </div>
+    
+    <h2 class="project-details-title title" id="details">
+        Project Details
+    </h2>
+    <div class="project-details project-details-t1">
+        <p>
+            The emotion detection model here is an application of computer vision technology, which can extract facial features from an input image and output a corresponding prediction of the person's emotion in that image.
+        </p>
+        <p>
+            The initial model can detect a smile and seven different expressions: Angry, Disgust, Fearful, Happy, Neutral, Sad, and Surprised.
+        </p>
+        <p>
+            In this application, a simplified version is implemented with three basic emotions to be detecting: Happy, Neutral, and Sad. This model is developed on Python, using TensorFlow and OpenCV.
+        </p>
+    </div>
+    <div class="project-details project-details-t2">
+        <hr>
+        <p>
+            Our application is stateless and ephemeral. This makes it able to scale up and down as the load increased or decreases - and ideal for parallel execution.
+        </p>
 
+        <p>
+            The emotion detection model function is deployed using OpenFaas, an open-source framework for hosting serverless functions.
+        </p>
+
+        <p>
+            Every function is housed in a Docker container. It is managed using Docker Swarm, which can add more Docker containers when the function is called more often.
+        </p>
     </div>
 
-    <div class="wrapper">
-        <div class="heading-content">
-            <h1>
-                The serverless emotion detection application that extracts facial features from an input image and outputs a corresponding emotion prediction.
-            </h1>
-            <button id="button" class="button">Analyze Your Own Picture</button>
-        </div>
-        <img class="heading-picture" src ="sources/smile@2x.jpg">
-        <h2 class="project-details-title title" id="details">
-            Project Details
-        </h2>
-        <div class="project-details project-details-t1">
-            <p>
-                The emotion detection model here is an application of computer vision technology, which can extract facial features from an input image and output a corresponding prediction of the person's emotion in that image.
-            </p>
-            <p>
-                The initial model can detect a smile and seven different expressions: Angry, Disgust, Fearful, Happy, Neutral, Sad, and Surprised.
-            </p>
-            <p>
-                In this application, a simplified version is implemented with three basic emotions to be detecting: Happy, Neutral, and Sad. This model is developed on Python, using TensorFlow and OpenCV.
-            </p>
-        </div>
-        <div class="project-details project-details-t2">
-            <hr>
-            <p>
-                Our application is stateless and ephemeral. This makes it able to scale up and down as the load increased or decreases - and ideal for parallel execution.
-            </p>
-
-            <p>
-                The emotion detection model function is deployed using OpenFaas, an open-source framework for hosting serverless functions.
-            </p>
-
-            <p>
-                Every function is housed in a Docker container. It is managed using Docker Swarm, which can add more Docker containers when the function is called more often.
-            </p>
-        </div>
-
-        <button onclick="location.href='https://github.com/agmo1993/serverless-emotion'" type="button" class="button learn-more-on-github">Learn More On GitHub</button>
+    <button onclick="window.open('https://github.com/agmo1993/serverless-emotion')" type="button" class="learn-more-on-github uk-button uk-button-primary uk-margin-auto-left uk-margin-auto-right" style="border-radius: 20px;" >Learn More On GitHub</button>
 
 
 <!--        <button class="project-details-button"></button>-->
-        <h2 class="used-technology-title title" id="technology">
-            Technology
-        </h2>
-        <img class="used-technology-t1" src="techn-icons/tensorflow-ar21(1).svg">
-        <img class="used-technology-t2" src="techn-icons/docker-export.svg">
-        <img class="used-technology-t3" src="techn-icons/open-faas.svg">
-        <img class="used-technology-t4" src="techn-icons/reactjs-ar21.svg">
+    <h2 class="used-technology-title title" id="technology">
+        Technology
+    </h2>
+    <img class="used-technology-t1" src="techn-icons/tensorflow-ar21(1).svg">
+    <img class="used-technology-t2" src="techn-icons/docker-export.svg">
+    <img class="used-technology-t3" src="techn-icons/open-faas.svg">
+    <img class="used-technology-t4" src="techn-icons/reactjs-ar21.svg">
 
-        <h2 class="our-team-title title" id="team">Our Team</h2>
+    <h2 class="our-team-title title" id="team">Our Team</h2>
 
-        <div class="our-team our-team-p1" >
-            <img class="profile-pic" src="profile-resources/hai.png">
-            <br>
-            <div class="name">Hai Ho Dac</div>
-            <div class="container-icons">
-              <span class="icons">
-                  <a href="https://github.com/hhodac">
-                      <img  class="git-icon" src="sources/GitHub-Mark/PNG/GitHub-Mark-120px-plus.png">
-                  </a>
+    <div class="our-team our-team-p1" >
+        <img class="profile-pic" src="profile-resources/hai.png">
+        <br>
+        <div class="name">Hai Ho Dac</div>
+        <div class="container-icons">
+            <span class="icons">
+                <a href="https://github.com/hhodac">
+                    <img  class="git-icon" src="sources/GitHub-Mark/PNG/GitHub-Mark-120px-plus.png">
+                </a>
 
-                  <a href="https://www.linkedin.com/in/haiho91/">
-                      <img class="linkedin-icon" src="sources/LinkedIn-Logos/LI-In-Bug.png">
-                  </a>
-              </span>
-            </div>
-        </div>
-        <div class="our-team our-team-p2">
-            <img class="profile-pic" src="profile-resources/abdul.png">
-            <br>
-            <div class="name">Abdul Mohhamad</div>
-            <div class="container-icons">
-              <span class="icons">
-                 <a href="https://github.com/agmo1993">
-                      <img  class="git-icon" src="sources/GitHub-Mark/PNG/GitHub-Mark-120px-plus.png">
-                  </a>
-
-                  <a href="https://www.linkedin.com/in/armohammad/">
-                      <img class="linkedin-icon" src="sources/LinkedIn-Logos/LI-In-Bug.png">
-                  </a>
-              </span>
-            </div>
-
-        </div>
-        <div class="our-team our-team-p3">
-            <img class="profile-pic" src="profile-resources/ernesto.png">
-            <br>
-            <div class="name">Ernesto Calderon</div>
-            <div class="container-icons">
-              <span class="icons">
-                  <a href="https://github.com/ecalderoncc">
-                      <img  class="git-icon" src="sources/GitHub-Mark/PNG/GitHub-Mark-120px-plus.png">
-                  </a>
-
-                  <a href="https://www.linkedin.com/in/ernesto-calderon/">
-                      <img class="linkedin-icon" src="sources/LinkedIn-Logos/LI-In-Bug.png">
-                  </a>
-              </span>
-            </div>
-
-        </div>
-        <div class="our-team our-team-p4">
-            <img class="profile-pic" src="profile-resources/eldar.png">
-            <br>
-            <div class="name">Eldar Kurmakaev</div>
-            <div class="container-icons">
-              <span class="icons">
-                  <a href="https://github.com/realCommitment">
-                      <img  class="git-icon" src="sources/GitHub-Mark/PNG/GitHub-Mark-120px-plus.png">
-                  </a>
-
-                  <a href="https://www.linkedin.com/in/eldarkurmakaev/">
-                      <img class="linkedin-icon" src="sources/LinkedIn-Logos/LI-In-Bug.png">
-                  </a>
-              </span>
-            </div>
-
+                <a href="https://www.linkedin.com/in/haiho91/">
+                    <img class="linkedin-icon" src="sources/LinkedIn-Logos/LI-In-Bug.png">
+                </a>
+            </span>
         </div>
     </div>
+    <div class="our-team our-team-p2">
+        <img class="profile-pic" src="profile-resources/abdul.png">
+        <br>
+        <div class="name">Abdul Mohhamad</div>
+        <div class="container-icons">
+            <span class="icons">
+                <a href="https://github.com/agmo1993">
+                    <img  class="git-icon" src="sources/GitHub-Mark/PNG/GitHub-Mark-120px-plus.png">
+                </a>
+
+                <a href="https://www.linkedin.com/in/armohammad/">
+                    <img class="linkedin-icon" src="sources/LinkedIn-Logos/LI-In-Bug.png">
+                </a>
+            </span>
+        </div>
+
+    </div>
+    <div class="our-team our-team-p3">
+        <img class="profile-pic" src="profile-resources/ernesto.png">
+        <br>
+        <div class="name">Ernesto Calderon</div>
+        <div class="container-icons">
+            <span class="icons">
+                <a href="https://github.com/ecalderoncc">
+                    <img  class="git-icon" src="sources/GitHub-Mark/PNG/GitHub-Mark-120px-plus.png">
+                </a>
+
+                <a href="https://www.linkedin.com/in/ernesto-calderon/">
+                    <img class="linkedin-icon" src="sources/LinkedIn-Logos/LI-In-Bug.png">
+                </a>
+            </span>
+        </div>
+
+    </div>
+    <div class="our-team our-team-p4">
+        <img class="profile-pic" src="profile-resources/eldar.png">
+        <br>
+        <div class="name">Eldar Kurmakaev</div>
+        <div class="container-icons">
+            <span class="icons">
+                <a href="https://github.com/realCommitment">
+                    <img  class="git-icon" src="sources/GitHub-Mark/PNG/GitHub-Mark-120px-plus.png">
+                </a>
+
+                <a href="https://www.linkedin.com/in/eldarkurmakaev/">
+                    <img class="linkedin-icon" src="sources/LinkedIn-Logos/LI-In-Bug.png">
+                </a>
+            </span>
+        </div>
+
+    </div>
+</div>
 
 <footer class="py-5 bg-dark">
     <div class="container">
@@ -193,8 +209,9 @@
 <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom JavaScript for this theme -->
-<script src="js/modal-popup-script.js"></script>
+<!-- <script src="js/modal-popup-script.js"></script> -->
 <script src="js/send-url-script.js"></script>
 <script src="js/scrolling-nav.js"></script>
+<script src="js/progress-bar-script.js"></script>
 </body>
 </html>

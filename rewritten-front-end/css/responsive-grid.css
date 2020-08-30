@@ -2,13 +2,17 @@
     grid-area: heading-content;
 }
 
-.heading-picture{
+.heading-result{
+    grid-area: heading-result;
+}
+
+.resulting{
     grid-area: heading-picture;
 }
 
 .project-details-title{
     grid-area: project-details-title;
-    padding-top: 5vw;
+    padding-top: 3vw;
 }
 
 .project-details-t1{
@@ -69,14 +73,23 @@
         display: grid;
         grid-template-columns: 200px 1fr 1fr;
         grid-template-rows: auto ;
-        grid-template-areas: "heading-content heading-content heading-picture" "project-details-title project-details-t1 project-details-t2" "project-details-title learn-more-on-github learn-more-on-github" "used-technology-title used-technology-t1 used-technology-t2" "used-technology-title used-technology-t3 used-technology-t4" "our-team-title our-team-p1 our-team-p2" "our-team-title our-team-p3 our-team-p4" ;
+        grid-template-areas: "heading-content heading-content heading-picture" 
+        "heading-result heading-result heading-result"
+        "project-details-title project-details-t1 project-details-t2" 
+        "project-details-title learn-more-on-github learn-more-on-github" 
+        "used-technology-title used-technology-t1 used-technology-t2" 
+        "used-technology-title used-technology-t3 used-technology-t4" 
+        "our-team-title our-team-p1 our-team-p2" 
+        "our-team-title our-team-p3 our-team-p4" ;
         max-width: 910px;
         grid-column-gap: 20px;
     }
     .heading-content{
         margin-right: 35px;
     }
-
+    .heading-result{
+        padding-top: 2em;
+    }
     .heading-picture{
         max-width: 118%;
         margin-left: -56px;
@@ -120,6 +133,7 @@
         grid-template-columns: auto ;
         grid-template-rows: auto ;
         grid-template-areas: "heading-content"
+        "heading-result"
         "project-details-title"
         "project-details-t1"
         "project-details-t2"
@@ -140,7 +154,7 @@
         display: none;
     }
     .heading-content{
-        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("sources/smile@2x.jpg");
+        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../sources/smile@2x.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         color: white;
@@ -155,10 +169,24 @@
     html{
         overflow-x: hidden;
     }
+
+    input{
+        margin-top: 18%;
+    }
+    #button_input{
+        margin-top: 3%;
+        margin-right: 6%;
+    }
+    #heading-result_id{
+        margin-top: 35%;
+    }
+
+    
     
     h1{
         padding: 10vw 10% 4vw 10%;
         font-size: 5vw;
+        color: white;
     }
     
     .title{
